@@ -13,15 +13,19 @@
     <div class="main-container">
         <div class="column">
             <a><img class="avatar" src="images/avatar.png" alt="main"></a>
-            <p class="font-Manrope text-hello">Привет, меня зовут <span style="color: #ebbb1e; font-weight: 550px;">just_lofe</span></p>
+            <p class="font-Manrope text-hello">qq, <span style="color: #ebbb1e; font-weight: 550px;" id="name">just_lofe</span></p>
 
-            <p class="font-Onest text-about">Я Java-разработчик, мне 15 лет. Занимаюсь разработкой различных плагинов и модификаций для игры Minecraft.</p>
+            <p class="font-Onest text-about">Я, Java-разработчик, мне 15 лет. Занимаюсь разработкой различных плагинов и модификаций для игры Minecraft.</p>
 
             <div class="container-info font-Onest text-time">
                 <img src="images/calendar.png" alt="" class="text-icon"> <span id="date"></span>
                 <br>
                 <img src="images/clock.png" alt="" class="text-icon"> <span id="time"></span><span class="text-timezone">(UTC +7:00)</span>
             </div>
+        </div>
+
+        <div class="column" style="display: flex;">
+            
         </div>
     </div>
 
@@ -30,9 +34,24 @@
         date.textContent = moment().utcOffset(7).format('DD.MM');
 
         var time = document.getElementById('time');
+        time.textContent = moment().utcOffset(7).format('HH:mm:ss');
         setInterval(function() {
             time.textContent = moment().utcOffset(7).format('HH:mm:ss');
         }, 1000);
+
+        var list = ["just_lofe", "лофи", "лофе", "just_l0fe", "лофу"];
+        var nickname = document.getElementById('name');
+        setInterval(function() {
+            var m = 5;
+            var n = 0;
+
+            var res;
+            do {
+                res = Math.floor(Math.random() * (n - m)) + m
+            } while (nickname.textContent == list[res]);
+
+            nickname.textContent = list[res];
+        }, 2500);
     </script>
 </body>
 </html>

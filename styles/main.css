@@ -10,6 +10,10 @@ html {
     font-family: "Onest";
 }
 
+.block {
+    display: block;
+}
+
 
 .text-hello {
     color: #fff;
@@ -53,12 +57,17 @@ html {
     margin-right: auto;
     width: 72em;
     display: grid;
-    grid-template-columns: 200px 1fr 1fr 25%;
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 4rem;
+    column-gap: 4rem;
 }
 
 .column {
-    grid-column-start: 1;
-    grid-column-end: 3;
+    flex-direction: column;
+    display: block;
+    gap: 10;
+    align-items: center;
 }
 
 .avatar {
@@ -66,4 +75,20 @@ html {
     width: 128px;
     height: 128px;
     box-shadow: 0 0 150px #e3a617;
+}
+
+.button-wide {
+    margin-top: 20px;
+    width: 408px;
+    height: 96px;
+    border-radius: 20px;
+    border: 2px solid #2C2C2C;
+    background-color: #222222;
+    cursor: pointer;
+    transition: all 0.6s ease;
+}
+
+.button-wide:hover {
+    transform: scale(1.2);
+    transform-origin: center;
 }
