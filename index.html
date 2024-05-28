@@ -4,8 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Я • just_lofe</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <script src="https://momentjs.com/downloads/moment.js"></script>
 </head>
 <body>
-    
+    <div class="header"></div>
+    <div class="main-container">
+        <div class="column">
+            <a><img class="avatar" src="images/avatar.png" alt="main"></a>
+            <p class="font-Manrope text-hello">Привет, меня зовут <span style="color: #ebbb1e; font-weight: 550px;">just_lofe</span></p>
+
+            <p class="font-Onest text-about">Я Java-разработчик, мне 15 лет. Занимаюсь разработкой различных плагинов и модификаций для игры Minecraft.</p>
+
+            <div class="container-info font-Onest text-time">
+                <img src="images/calendar.png" alt="" class="text-icon"> <span id="date"></span>
+                <br>
+                <img src="images/clock.png" alt="" class="text-icon"> <span id="time"></span><span class="text-timezone">(UTC +7:00)</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var date = document.getElementById('date');
+        date.textContent = moment().utcOffset(7).format('DD.MM');
+
+        var time = document.getElementById('time');
+        setInterval(function() {
+            time.textContent = moment().utcOffset(7).format('HH:mm:ss');
+        }, 1000);
+    </script>
 </body>
 </html>
