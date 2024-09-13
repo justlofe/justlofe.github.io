@@ -1,5 +1,11 @@
 html {
     background-color: #171717;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
 .font-Manrope {
@@ -10,21 +16,18 @@ html {
     font-family: "Onest";
 }
 
-.block {
-    display: block;
-}
-
-
 .text-hello {
     color: #fff;
-    font-weight: 400px;
+    font-weight: 400;
     font-size: 30px;
+    margin-top: 10px;
 }
 
 .text-about {
     color: #A3A3A3;
-    font-weight: 300px;
+    font-weight: 300;
     font-size: 20px;
+    text-align: center;
 }
 
 .text-time {
@@ -34,7 +37,7 @@ html {
 
 .text-timezone {
     color: #505050;
-    font-weight: 100px;
+    font-weight: 100;
 }
 
 .text-icon {
@@ -46,6 +49,7 @@ html {
 .container-info {
     display: flex;
     gap: 1rem;
+    justify-content: center;
 }
 
 .header {
@@ -53,25 +57,30 @@ html {
 }
 
 .main-container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 72em;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 72em;
     display: grid;
-    grid-template-rows: repeat(1, minmax(0, 1fr));
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 4rem;
-    column-gap: 4rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
 }
 
 .column {
+    display: flex;
     flex-direction: column;
-    display: block;
-    gap: 10;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
 .avatar {
-    border-radius: 256px;
+    border-radius: 50%;
     width: 128px;
     height: 128px;
     box-shadow: 0 0 150px #e3a617;
@@ -79,16 +88,55 @@ html {
 
 .button-wide {
     margin-top: 20px;
-    width: 408px;
+    width: 100%;
+    max-width: 408px;
     height: 96px;
     border-radius: 20px;
     border: 2px solid #2C2C2C;
     background-color: #222222;
+    color: white;
+    font-size: 20px;
+    font-weight: 200px;
     cursor: pointer;
     transition: all 0.6s ease;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
 }
 
 .button-wide:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     transform-origin: center;
+}
+
+.button-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+}
+
+.button-subtext {
+    color: #A3A3A3;
+    font-size: 16px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.button-icon {
+    width: 64px;
+    height: 64px;
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+
+    .button-wide {
+        width: 90%;
+    }
 }
