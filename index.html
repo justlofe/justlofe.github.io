@@ -45,24 +45,24 @@
     <script>
         var date = document.getElementById('date');
         date.textContent = moment().utcOffset(7).format('DD.MM');
-
+    
         var time = document.getElementById('time');
-        time.textContent = moment().utcOffset(7).format('HH:mm:ss');
+        time.textContent = moment().utcOffset(7).format('hh:mm:ss A');
         setInterval(function() {
-            time.textContent = moment().utcOffset(7).format('HH:mm:ss');
+            time.textContent = moment().utcOffset(7).format('hh:mm:ss A');
         }, 1000);
-
+    
         var list = ["just_lofe", "лофи", "лофе", "just_l0fe", "just_lof3"];
         var nickname = document.getElementById('name');
         setInterval(function() {
             var m = 5;
             var n = 0;
-
+    
             var res;
             do {
                 res = Math.floor(Math.random() * (n - m)) + m
             } while (nickname.textContent == list[res]);
-
+    
             nickname.textContent = list[res];
         }, 2500);
     </script>
